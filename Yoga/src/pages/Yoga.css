@@ -1,0 +1,174 @@
+/* Base styles */
+.yoga-container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #333333;
+  padding:0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Performance container */
+.performance-container {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.pose-performance {
+  text-align: center;
+}
+
+.pose-performance h4 {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #e2e8f0;
+}
+
+/* Webcam container */
+.webcam-container {
+  position: relative;
+  margin:4rem 0;
+}
+
+.webcam-container canvas,
+.webcam-container video {
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Pose image */
+.pose-img {
+  position: absolute;
+  right: 4rem;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Buttons */
+.secondary-btn {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin: 1rem;
+}
+
+.secondary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+}
+
+.secondary-btn:disabled {
+  background: #4b5563;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Countdown and Score Display */
+.countdown,
+.score-display {
+  /* background: rgba(255, 255, 255, 0.1); */
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  margin: 1rem 0;
+  text-align: center;
+  width: 300px;
+}
+
+.countdown div,
+.score-display div {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #e2e8f0;
+}
+
+/* Instructions and Dropdown styling */
+.instructions {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  margin: 2rem 0;
+  max-width: 600px;
+}
+
+.dropdown {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.dropdown:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.yoga-container > * {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .pose-img {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin: 2rem auto;
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .yoga-container {
+    padding: rem;
+  }
+
+  .performance-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .webcam-container canvas,
+  .webcam-container video {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* Ensure any globally defined card styles are light-themed */
+.yoga-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Any other dark theme classes should be converted to light theme */
